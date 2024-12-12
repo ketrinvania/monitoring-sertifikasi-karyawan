@@ -1,7 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaUserCircle, FaHome, FaUserAlt, FaSignOutAlt } from 'react-icons/fa'; // React Icons
 
 const Sidebar = () => {
+  const navigate = useNavigate(); 
+
+  const handleNavigate = (path) => {
+    navigate(path); 
+  };
+
+  const handleLogout = () => {
+    navigate('/'); 
+  };
+
   return (
     <div style={styles.sidebar}>
       <div style={styles.iconContainer}>
@@ -9,16 +20,19 @@ const Sidebar = () => {
         <span style={styles.label}>Admin</span>
       </div>
       <div style={styles.menu}>
-        <div style={styles.menuItem}>
+        <div 
+          style={styles.menuItem} 
+          onClick={() => handleNavigate('/dashboard')} 
+        >
           <FaHome size={35} style={styles.icon} />
-          <span style={styles.label}></span>
+          <span style={styles.label}>Home</span>
         </div>
         <div style={styles.menuItem}>
           <FaUserAlt size={35} style={styles.icon} />
-          <span style={styles.label}></span>
+          <span style={styles.label}>User</span>
         </div>
       </div>
-      <div style={styles.footer}>
+      <div style={styles.footer} onClick={handleLogout}>
         <FaSignOutAlt style={styles.icon} />
         <span style={styles.label}>Logout</span>
       </div>
@@ -31,7 +45,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#E9F7E4',
+    backgroundColor: '#E6F6D7',
     height: '100vh',
     width: '80px',
     padding: '10px',
