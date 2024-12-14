@@ -13,7 +13,7 @@ const DepartmentList = () => {
     <div>
       {/* Sidebar */}
       <div style={styles.sidebar}>
-        <h1 style={styles.title}>Dashboard</h1>
+        <h1 style={styles.title}>Departement</h1>
       </div>
 
       {/* Main content */}
