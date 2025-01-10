@@ -4,6 +4,8 @@ import Sidebar from './component/Sidebar';
 import Login from './component/login'; 
 import Dashboard from './component/dashboard'; 
 import Department from './component/DepartementList'; 
+import EmployeeList from './component/data_karyawan';
+import AddEmployee from './component/add_dataemployee';
 
 const App = () => {
   return (
@@ -32,6 +34,28 @@ const App = () => {
             </div>
           }
         /> {/* Halaman Department dengan Sidebar */}
+        <Route
+          path="/employee"
+          element={
+            <div style={styles.app}>
+              <Sidebar />
+              <div style={styles.content}>
+                <EmployeeList />
+              </div>
+            </div>
+          }
+        /> {/* Halaman Employee dengan Sidebar */}
+         <Route
+          path="/AddEmployee"
+          element={
+            <div style={styles.app}>
+              <Sidebar />
+              <div style={styles.content}>
+                <AddEmployee/>
+              </div>  
+            </div>
+          }
+        /> {/* Halaman Add-Employee dengan Sidebar */}
       </Routes>
     </Router>
   );
