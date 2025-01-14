@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './component/Sidebar'; 
 import Login from './component/login'; 
 import Dashboard from './component/dashboard'; 
-import Department from './component/DepartementList'; 
+import Department from './component/DepartmentList'; 
+import Training from './component/training';
 
 const App = () => {
   return (
@@ -32,6 +33,17 @@ const App = () => {
             </div>
           }
         /> {/* Halaman Department dengan Sidebar */}
+        <Route
+          path="/training"
+          element={
+            <div style={styles.app}>
+              <Sidebar />
+              <div style={styles.content}>
+                <Training />
+              </div>
+            </div>
+          }
+        /> {/* Halaman Training dengan Sidebar */}
       </Routes>
     </Router>
   );
@@ -46,7 +58,7 @@ const styles = {
   },
   content: {
     flex: 1,
-    marginLeft: '250px', 
+    marginLeft: '70px', 
   },
 };
 

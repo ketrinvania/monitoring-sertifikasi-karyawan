@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaDesktop, FaCalculator, FaChartLine, FaUserTie } from 'react-icons/fa'; 
 
-const departments = [
+export const departments = [
   { id: 1, name: 'IT Department', icon: <FaDesktop size={50} /> },
   { id: 2, name: 'Finance Department', icon: <FaCalculator size={50} /> },
   { id: 3, name: 'Marketing Department', icon: <FaChartLine size={50} /> },
@@ -13,7 +13,7 @@ const DepartmentList = () => {
     <div>
       {/* Sidebar */}
       <div style={styles.sidebar}>
-        <h1 style={styles.title}>Departement</h1>
+        <h1 style={styles.title}>Department</h1>
       </div>
 
       {/* Main content */}
@@ -52,7 +52,6 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
-    padding: '0px',
     marginTop: '100px', 
   },
   card: {
