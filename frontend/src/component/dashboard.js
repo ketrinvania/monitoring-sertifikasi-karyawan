@@ -87,7 +87,7 @@ const Dashboard = () => {
           </div>
           <div 
             style={styles.card} 
-            onClick={() => handleNavigate('/course')}
+            onClick={() => handleNavigate('/training')}
             onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
             onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           >
