@@ -3,66 +3,69 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './component/Sidebar'; 
 import Login from './component/login'; 
 import Dashboard from './component/dashboard'; 
-<<<<<<< HEAD
-import Department from './component/DepartementList'; 
-import Certificate from './component/certificate'; // Import komponen Certificate
-=======
 import Department from './component/DepartmentList'; 
-import Training from './component/training';
->>>>>>> 809b4eadee09f6f61e11609aa44c243deda1760a
+import Certificate from './component/certificate'; // Import komponen Certificate
+import Training from './component/training'; // Import komponen Training
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} /> {/* Halaman Login */}
+        
+        {/* Halaman Dashboard dengan Sidebar */}
         <Route
           path="/dashboard"
           element={
-            <div style={styles.app}>
-              <Sidebar />
-              <div style={styles.content}>
-                <Dashboard />
-              </div>
-            </div>
+            <AppLayout>
+              <Dashboard />
+            </AppLayout>
           }
-        /> {/* Halaman Dashboard dengan Sidebar */}
+        />
+        
+        {/* Halaman Department dengan Sidebar */}
         <Route
           path="/department"
           element={
-            <div style={styles.app}>
-              <Sidebar />
-              <div style={styles.content}>
-                <Department />
-              </div>
-            </div>
+            <AppLayout>
+              <Department />
+            </AppLayout>
           }
-        /> {/* Halaman Department dengan Sidebar */}
+        />
+        
+        {/* Halaman Certificate dengan Sidebar */}
         <Route
-<<<<<<< HEAD
           path="/certificate"
-=======
-          path="/training"
->>>>>>> 809b4eadee09f6f61e11609aa44c243deda1760a
           element={
-            <div style={styles.app}>
-              <Sidebar />
-              <div style={styles.content}>
-<<<<<<< HEAD
-                <Certificate />
-              </div>
-            </div>
+            <AppLayout>
+              <Certificate />
+            </AppLayout>
           }
-        /> {/* Halaman Certificate dengan Sidebar */}
-=======
-                <Training />
-              </div>
-            </div>
+        />
+        
+        {/* Halaman Training dengan Sidebar */}
+        <Route
+          path="/training"
+          element={
+            <AppLayout>
+              <Training />
+            </AppLayout>
           }
-        /> {/* Halaman Training dengan Sidebar */}
->>>>>>> 809b4eadee09f6f61e11609aa44c243deda1760a
+        />
       </Routes>
     </Router>
+  );
+};
+
+// Komponen pembungkus dengan Sidebar
+const AppLayout = ({ children }) => {
+  return (
+    <div style={styles.app}>
+      <Sidebar />
+      <div style={styles.content}>
+        {children}
+      </div>
+    </div>
   );
 };
 
