@@ -91,7 +91,7 @@ const Dashboard = () => {
             onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
             onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
           >
-            <div style={styles.icon}>🎓</div>
+            <div style={styles.icon}>📘</div>
             <div style={styles.cardText}>Course</div>
           </div>
           <div 

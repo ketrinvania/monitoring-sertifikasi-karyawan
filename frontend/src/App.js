@@ -4,6 +4,7 @@ import Sidebar from './component/Sidebar';
 import Login from './component/login'; 
 import Dashboard from './component/dashboard'; 
 import Department from './component/DepartementList'; 
+import Certificate from './component/certificate'; // Import komponen Certificate
 
 const App = () => {
   return (
@@ -32,6 +33,17 @@ const App = () => {
             </div>
           }
         /> {/* Halaman Department dengan Sidebar */}
+        <Route
+          path="/certificate"
+          element={
+            <div style={styles.app}>
+              <Sidebar />
+              <div style={styles.content}>
+                <Certificate />
+              </div>
+            </div>
+          }
+        /> {/* Halaman Certificate dengan Sidebar */}
       </Routes>
     </Router>
   );
